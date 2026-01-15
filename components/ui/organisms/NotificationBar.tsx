@@ -12,7 +12,7 @@ import {
 export function NotificationBar({ data }: { data: NotificationBarItemType[] }) {
   return (
     <Sidebar className="w-70" side="right">
-      <SidebarContent className="pl-5 pt-5 bg-white dark:bg-background flex flex-col gap-y-8">
+      <SidebarContent className="pl-5 py-5 no-scrollbar bg-white dark:bg-background flex flex-col gap-y-8">
         <SidebarGroup className="p-0 m-0">
           <SidebarGroupContent className="flex flex-col gap-8">
             {data.map((item, idx) => (
