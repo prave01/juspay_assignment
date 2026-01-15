@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/shadcn/button";
-import { useSidebar } from "@/components/shadcn/sidebar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -9,18 +8,20 @@ export function SideBarTrigger({
   position,
   className,
   onClick,
+  setOpen,
   ...props
-}: React.ComponentProps<typeof Button> & { position: "right" | "left" }) {
-  const { toggleSidebar } = useSidebar();
-
+}: React.ComponentProps<typeof Button> & {
+  position: "right" | "left";
+  setOpen: (data: any) => void;
+}) {
   return (
     <button
       onClick={(event) => {
         onClick?.(event);
-        toggleSidebar();
+        setOpen((prev: any) => !prev);
       }}
       className={cn(
-        position === "right" && "rotate-180",
+        position === "right" && "scale-x-[-1]",
         "bg-transparent cursor-pointer border-none focus-visible:outline-none",
         className,
       )}
