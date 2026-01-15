@@ -39,7 +39,7 @@ export function SideBarClient({
   sidebarItems: SidebarCategory[];
 }) {
   return (
-    <Sidebar className="max-w-53">
+    <Sidebar side="left" className="max-w-53 w-full">
       <SidebarContent className="py-5 px-4 text-[14px] gap-y-4 bg-white dark:bg-background">
         <SidebarGroup className="flex-row p-0 m-0 gap-x-2 items-center">
           <Avatar className="size-6">
