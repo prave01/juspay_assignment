@@ -60,7 +60,7 @@ export function ProjectionsVsActualsChart() {
           <Bar
             dataKey="actual"
             stackId="stack"
-            fill="#A5BECD"
+            fill="#A8C5DA"
             radius={[0, 0, 0, 0]}
             barSize={20}
             isAnimationActive={false}
@@ -69,7 +69,7 @@ export function ProjectionsVsActualsChart() {
           <Bar
             dataKey="projection"
             stackId="stack"
-            fill="#C5D9E5"
+            fill="#CFDFEA"
             radius={[4, 4, 0, 0]}
             barSize={24}
             isAnimationActive={false}
