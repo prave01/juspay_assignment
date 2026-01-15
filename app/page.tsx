@@ -1,6 +1,7 @@
 "use client";
 
 import { SidebarProvider } from "@/components/shadcn/sidebar";
+import { StatCard } from "@/components/ui/atoms/StatCard";
 import { NavMenu } from "@/components/ui/molecules/Navmenu";
 import { SideBarClient } from "@/components/ui/organisms/AppSideBar";
 import { NotificationBar } from "@/components/ui/organisms/NotificationBar";
@@ -19,8 +20,10 @@ export default function Home() {
         </SidebarProvider>
         <main className="flex-1">
           <NavMenu setOpenLeft={setOpenLeft} setOpenRight={setOpenRight} />
-          <div className="w-full mx-auto flex items-center justify-center h-full">
-            <div className="h-full max-w-332.5 w-full"></div>
+          <div className="w-full mx-auto py-8 flex items-center justify-center h-full">
+            <div className="h-full max-w-332.5 w-full">
+              <StatCard />
+            </div>
           </div>
         </main>
         <SidebarProvider width="280px" open={openRight} className="w-fit">
