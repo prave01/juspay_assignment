@@ -1,7 +1,7 @@
 "use client";
 
 import { SidebarProvider } from "@/components/shadcn/sidebar";
-import { SideBarTrigger } from "@/components/ui/molecules/SideBarTrigger";
+import { NavMenu } from "@/components/ui/molecules/Navmenu";
 import { SideBarClient } from "@/components/ui/organisms/AppSideBar";
 import { NotificationBar } from "@/components/ui/organisms/NotificationBar";
 import { notificationBarData, sidebarData } from "@/constants/homePage";
@@ -17,13 +17,8 @@ export default function Home() {
         <SidebarProvider width="212px" className="w-fit" open={openLeft}>
           <SideBarClient sidebarItems={sidebarData} />
         </SidebarProvider>
-        <main className="w-full">
-          <div className="w-full h-17 border-b border-border px-7 py-5">
-            <div className="flex items-center w-fit h-full justify-center">
-              <SideBarTrigger setOpen={setOpenLeft} position={"left"} />
-              <SideBarTrigger setOpen={setOpenRight} position={"right"} />
-            </div>
-          </div>
+        <main className="flex-1">
+          <NavMenu setOpenLeft={setOpenLeft} setOpenRight={setOpenRight} />
         </main>
         <SidebarProvider width="280px" open={openRight} className="w-fit">
           <NotificationBar data={notificationBarData} />
