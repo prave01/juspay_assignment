@@ -28,7 +28,7 @@ export default function Home() {
   if (loading) {
     return (
       <div className="h-full w-full flex items-center justify-center min-h-[80vh]">
-        <Spinner className="h-10 w-10 text-black" />
+        <Spinner className="h-10 w-10 text-primary" />
       </div>
     );
   }
@@ -37,21 +37,21 @@ export default function Home() {
     <div className="w-full flex-col mx-auto p-8 flex items-start justify-center h-full">
       <div className="h-full flex-col max-w-400 w-full space-y-6 flex items-center justify-start gap-4">
         {" "}
-        <div className="max-w-fit w-full flex flex-col gap-2">
+        <div className="max-w-fit w-full flex flex-col gap-[28px]">
           {" "}
-          <p className="font-semibold p-4 mr-auto">eCommerce</p>
-          <div className="w-full h-fit flex justify-center items-center gap-5">
+          <p className="font-semibold px-4 mr-auto">eCommerce</p>
+          <div className="w-full h-fit flex justify-center items-center gap-[28px]">
             {" "}
-            <div className="grid grid-rows-2 grid-cols-2 w-fit gap-7">
+            <div className="grid grid-rows-2 grid-cols-2 w-fit gap-6">
               <CardStats data={statCardsData} />
             </div>
             <ProjectionsVsActualsChart />
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-[28px]">
             <RevenueChart />
             <RevenueByLocation />
           </div>
-          <div className="flex gap-2 items-center justify-between w-full">
+          <div className="flex gap-2 pb-[28px] items-center justify-between w-full">
             <TopSellingProducts data={topSellingProductsData} />
             <TotalSales />
           </div>

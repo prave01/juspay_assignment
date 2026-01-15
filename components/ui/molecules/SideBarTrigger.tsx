@@ -30,7 +30,7 @@ export function SideBarTrigger({
         width={500}
         height={500}
         src={"/expand.svg"}
-        className="size-5"
+        className="size-5 dark:invert"
         alt={""}
       />
     </button>

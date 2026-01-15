@@ -36,12 +36,12 @@ export function NotificationBarItem({
                 alt={"image"}
               />
               {category === "Activities" && (
-                <span className=" text-[12px] text-neutral-200">|</span>
+                <span className=" text-[12px] dark:text-neutral-700 font-normal text-neutral-200">|</span>
               )}
             </div>
             <div className="flex items-start justify-start flex-col">
               <p className="text-[14px]">{i.message}</p>
-              <p className="text-[12px] text-black/40">{i.description}</p>
+              <p className="text-[12px] text-primary/40">{i.description}</p>
             </div>
           </div>
         ))}

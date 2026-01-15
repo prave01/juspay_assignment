@@ -51,11 +51,11 @@ export function SideBarClient({
 
         <SidebarGroup className="p-0 m-0 flex flex-col gap-1">
           <SidebarGroupLabel className="px-2 flex gap-5 font-normal text-[14px]">
-            <span className="text-primary">Favorites</span>
-            <span className="text-primary/40">Recently</span>
+            <p className="text-primary/40">Favorites</p>
+            <p className="text-primary/20">Recently</p>
           </SidebarGroupLabel>
 
-          <SidebarGroupContent className="pl-7 list-disc marker:text-black/20 space-y-3">
+          <SidebarGroupContent className="pl-7 list-disc marker:text-primary/20 space-y-3">
             <li>
               <Link href="#">Overview</Link>
             </li>
@@ -71,17 +71,17 @@ export function SideBarClient({
           </SidebarGroupLabel>
 
           <SidebarGroupContent className="space-y-1">
-            <div className="flex bg-neutral-100 relative py-1 rounded-md items-center gap-1.5">
+            <div className="flex bg-neutral-100 dark:bg-[#333333] relative py-1 rounded-md items-center gap-1.5">
               <div className="pl-6.5">
                 <Image
                   src="/piechart.svg"
-                  className="size-4.5 mr-0.5"
+                  className="size-4.5 mr-0.5 dark:invert"
                   width={16}
                   height={16}
                   alt=""
                 />
               </div>
-              <div className="w-1 h-4 rounded-md bg-black absolute" />
+              <div className="w-1 h-4 rounded-md dark:bg-[#50515A] bg-black absolute" />
               Default
             </div>
             <SideBarSelect

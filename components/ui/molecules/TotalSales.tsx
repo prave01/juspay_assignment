@@ -11,18 +11,18 @@ const data = [
 
 export function TotalSales() {
     return (
-        <div className="w-full max-w-[240px] bg-sky-100/20 h-[344px] rounded-lg p-6 gap-4 flex flex-col justify-between">
-            <h3 className="text-[14px] font-semibold text-black">Total Sales</h3>
+        <div className="w-full max-w-[202px] bg-[#F7F9FB] h-[338px] dark:bg-[#272727] rounded-lg p-4 flex flex-col justify-between">
+            <h3 className="text-[14px] font-semibold text-primary">Total Sales</h3>
 
-            <div className="h-[160px] w-full relative flex items-center justify-center">
+            <div className="h-auto w-full relative flex items-center justify-center">
                 <ResponsiveContainer width="100%" height="100%">
                     <PieChart>
                         <Pie
                             data={data}
                             cx="50%"
                             cy="50%"
-                            innerRadius={50}
-                            outerRadius={65}
+                            innerRadius={40}
+                            outerRadius={60}
                             paddingAngle={5}
                             dataKey="value"
                             cornerRadius={40}
@@ -47,12 +47,12 @@ export function TotalSales() {
                     <div key={item.name} className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                             <div
-                                className="w-1.5 h-1.5 rounded-full"
+                                className="w-1.5 h-1.5 rounded-full dark:bg-white"
                                 style={{ backgroundColor: item.color }}
                             />
-                            <span className="text-xs text-gray-600">{item.name}</span>
+                            <span className="text-[12px] text-gray-600 dark:text-white">{item.name}</span>
                         </div>
-                        <span className="text-xs font-normal text-gray-600">
+                        <span className="text-[12px] font-normal text-gray-600 dark:text-white">
                             ${item.value.toFixed(2)}
                         </span>
                     </div>

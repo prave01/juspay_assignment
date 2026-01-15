@@ -20,8 +20,8 @@ const data = [
 
 export function ProjectionsVsActualsChart() {
   return (
-    <div className="w-full max-w-108 h-full bg-white rounded-lg p-6">
-      <h3 className="text-lg font-bold text-black mb-6">
+    <div className="w-full max-w-108 h-[252px] bg-white bg-[#F7F9FB] dark:bg-[#272727] rounded-lg p-6">
+      <h3 className="text-lg font-bold text-primary mb-6">
         Projections vs Actuals
       </h3>
 
@@ -70,6 +70,7 @@ export function ProjectionsVsActualsChart() {
             dataKey="projection"
             stackId="stack"
             fill="#CFDFEA"
+            className="dark:fill-[#677680] fill-[#CFDFEA]"
             radius={[4, 4, 0, 0]}
             barSize={24}
             isAnimationActive={false}

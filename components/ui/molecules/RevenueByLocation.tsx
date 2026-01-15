@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function RevenueByLocation() {
   return (
-    <div className="rounded-lg w-50.5 flex items-center justify-start gap-4 flex-col bg-sky-100/25 p-4">
+    <div className="rounded-lg w-[202px] flex items-center justify-start gap-4 flex-col bg-[#F7F9FB] dark:bg-[#272727] p-4">
       <p className="text-[14px] font-semibold">Revenue by Location</p>
       <Image
         width={500}
@@ -21,10 +21,10 @@ export function RevenueByLocation() {
         ].map((location) => (
           <div key={location.name} className="space-y-1">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-medium text-gray-700">
+              <span className="text-xs font-medium text-gray-700 dark:text-white">
                 {location.name}
               </span>
-              <span className="text-xs font-semibold text-black">
+              <span className="text-xs font-semibold text-primary">
                 {location.revenue}K
               </span>
             </div>

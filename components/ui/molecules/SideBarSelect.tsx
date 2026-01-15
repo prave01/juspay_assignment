@@ -19,20 +19,20 @@ export const SideBarSelect = ({
       {" "}
       <div
         onClick={() => setOpen((v) => !v)}
-        className="px-1 flex cursor-pointer hover:bg-neutral-100 
+        className="px-1 flex cursor-pointer hover:bg-neutral-100 dark:hover:bg-[#333333] 
                   relative py-1 transition-all duration-200 ease-out group 
                   rounded-md items-center justify-start gap-1.5"
       >
         {" "}
         <div className="w-4 flex items-center justify-center">
           <ChevronRight
-            className={`size-4 text-black/20 transition-transform 
+            className={`size-4 text-primary/20 transition-transform 
                             duration-200 ease-out ${open ? "rotate-90" : ""}`}
           />
         </div>
         <Image
           src={iconPath}
-          className="size-5 mr-0"
+          className="size-5 mr-0 dark:invert"
           width={500}
           height={500}
           alt=""

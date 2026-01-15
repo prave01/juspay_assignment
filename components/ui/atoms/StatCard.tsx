@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ClassValue } from "clsx";
-import Image from "next/image";
+import { ReactSVG } from "react-svg";
 
 export function StatCard({
   name,
@@ -15,37 +15,27 @@ export function StatCard({
   raise: boolean;
   className: ClassValue;
 }) {
+  const isSpecial = name === "Orders" || name === "Revenue";
+  const bgColor = isSpecial ? "bg-[#F7F9FB] dark:bg-[#272727]" : "bg-[#F7F9FB]";
+  const textColor = isSpecial ? "text-[#1C1C1C] dark:text-white" : "text-[#1C1C1C]";
+
   return (
     <div
       className={cn(
-        `w-50.5 h-28 flex items-start
-        gap-y-3 flex-col bg-sky-100 rounded-xl p-6`,
+        "w-50.5 h-28 flex items-start gap-y-3 flex-col rounded-xl p-6",
+        bgColor,
         className,
       )}
     >
-      <p className="text-[14px] font-semibold text-black">{name}</p>
+      <p className={cn("text-[14px] font-semibold", textColor)}>{name}</p>
       <div className="flex gap-7 items-center w-full">
-        <p className="text-[24px] font-semibold text-black">{number}</p>
+        <p className={cn("text-[24px] font-semibold", textColor)}>{number}</p>
         <div className="flex gap-1 items-center justify-center">
-          {" "}
-          <p className="text-black text-[12px]">{points}</p>
-          {raise && (
-            <Image
-              src={"/body/statcard/ArrowRise.svg"}
-              width={200}
-              height={200}
-              className="size-4"
-              alt={""}
-            />
-          )}{" "}
-          {!raise && (
-            <Image
-              src={"/body/statcard/ArrowFall.svg"}
-              width={200}
-              height={200}
-              className="size-4"
-              alt={""}
-            />
+          <p className={cn("text-[12px]", textColor)}>{points}</p>
+          {raise ? (
+            <ReactSVG className={cn(isSpecial ? "stroke-dark dark:stroke-white fill-dark dark:fill-white" : "stroke-primary dark:stroke-black")} src="/body/statcard/ArrowRise.svg" />
+          ) : (
+            <ReactSVG className={cn(isSpecial ? "stroke-dark dark:stroke-white fill-dark dark:fill-white" : "stroke-primary dark:stroke-black")} src="/body/statcard/ArrowFall.svg" />
           )}
         </div>
       </div>

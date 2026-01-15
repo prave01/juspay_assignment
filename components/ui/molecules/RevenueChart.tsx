@@ -20,23 +20,23 @@ const data = [
 
 export function RevenueChart() {
   return (
-    <div className="w-full max-w-165.5 p-5 h-78 bg-sky-100/20 rounded-lg">
+    <div className="w-full max-w-165.5 p-5 h-78 bg-[#F7F9FB] dark:bg-[#272727] rounded-lg">
       <div className="flex items-center mb-3 gap-6">
-        <h3 className="text-[14px] font-semibold text-black">Revenue</h3>
-        <p className="text-black/10 font-semibold">|</p>
+        <h3 className="text-[14px] font-semibold text-primary">Revenue</h3>
+        <p className="text-primary/10 font-semibold">|</p>
         <div className="flex text-[12px] items-center gap-6">
           <div className="flex items-center gap-2">
-            <div className="size-1.5  rounded-full bg-black"></div>
-            <span className="text-gray-600">
+            <div className="size-1.5  rounded-full bg-black dark:bg-[#C6C7F8]"></div>
+            <span className="text-gray-600 dark:text-white">
               Current Week{" "}
-              <span className="font-semibold pl-1 text-black">$58,211</span>
+              <span className="font-semibold pl-1 text-primary">$58,211</span>
             </span>
           </div>
           <div className="flex items-center gap-2">
             <div className="size-1.5 rounded-full bg-[#A5C4D4]"></div>
-            <span className="text-gray-600">
+            <span className="text-gray-600 dark:text-white">
               Previous Week{" "}
-              <span className="font-semibold pl-1 text-black">$68,788</span>
+              <span className="font-semibold pl-1 text-primary">$68,788</span>
             </span>
           </div>
         </div>
@@ -86,7 +86,7 @@ export function RevenueChart() {
           <Line
             type="natural"
             dataKey="currentWeek"
-            stroke="#000000"
+            className="dark:stroke-purple-100 stroke-[#000000]"
             strokeWidth={2.5}
             dot={false}
             activeDot={false}
@@ -96,7 +96,7 @@ export function RevenueChart() {
           <Line
             type="natural"
             dataKey="projection"
-            stroke="#000000"
+            className="dark:stroke-[#C6C7F8] stroke-[#000000]"
             strokeWidth={2.5}
             strokeDasharray="6 4"
             dot={false}
