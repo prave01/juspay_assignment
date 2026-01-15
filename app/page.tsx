@@ -19,6 +19,9 @@ export default function Home() {
         </SidebarProvider>
         <main className="flex-1">
           <NavMenu setOpenLeft={setOpenLeft} setOpenRight={setOpenRight} />
+          <div className="w-full mx-auto flex items-center justify-center h-full">
+            <div className="h-full max-w-332.5 w-full"></div>
+          </div>
         </main>
         <SidebarProvider width="280px" open={openRight} className="w-fit">
           <NotificationBar data={notificationBarData} />
