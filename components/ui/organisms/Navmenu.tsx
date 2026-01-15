@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { SideBarTrigger } from "./SideBarTrigger";
 import { Search } from "lucide-react";
+import { SideBarTrigger } from "../molecules/SideBarTrigger";
 
 export function NavMenu({
   setOpenRight,

@@ -1,3 +1,4 @@
+import { CardStatsType } from "@/components/ui/molecules/CardStats";
 import { NotificationBarItemType } from "@/components/ui/molecules/NotificationBarItem";
 import { type SidebarCategory } from "@/components/ui/organisms/AppSideBar";
 
@@ -139,5 +140,36 @@ export const notificationBarData: NotificationBarItemType[] = [
         message: "Koray Okurmus",
       },
     ],
+  },
+];
+
+export const statCardsData: CardStatsType[] = [
+  {
+    className: "bg-sky-100",
+    name: "Customers",
+    number: "3,781",
+    points: "+11.01%",
+    raise: true,
+  },
+  {
+    className: "bg-sky-100/30",
+    name: "Orders",
+    number: "1,219",
+    points: "-0.03%",
+    raise: false,
+  },
+  {
+    className: "bg-sky-100/30",
+    name: "Revenue",
+    number: "$695",
+    points: "+15.02%",
+    raise: true,
+  },
+  {
+    className: "bg-[#E5ECF6]",
+    name: "Growth",
+    number: "30.1%",
+    points: "+6.08%",
+    raise: true,
   },
 ];

@@ -2,10 +2,15 @@
 
 import { SidebarProvider } from "@/components/shadcn/sidebar";
 import { StatCard } from "@/components/ui/atoms/StatCard";
-import { NavMenu } from "@/components/ui/molecules/Navmenu";
+import { CardStats } from "@/components/ui/molecules/CardStats";
 import { SideBarClient } from "@/components/ui/organisms/AppSideBar";
+import { NavMenu } from "@/components/ui/organisms/Navmenu";
 import { NotificationBar } from "@/components/ui/organisms/NotificationBar";
-import { notificationBarData, sidebarData } from "@/constants/homePage";
+import {
+  notificationBarData,
+  sidebarData,
+  statCardsData,
+} from "@/constants/homePage";
 import { useState } from "react";
 
 export default function Home() {
@@ -20,9 +25,12 @@ export default function Home() {
         </SidebarProvider>
         <main className="flex-1">
           <NavMenu setOpenLeft={setOpenLeft} setOpenRight={setOpenRight} />
-          <div className="w-full mx-auto py-8 flex items-center justify-center h-full">
-            <div className="h-full max-w-332.5 w-full">
-              <StatCard />
+          <div className="w-full mx-auto p-8 flex items-center justify-center h-full">
+            <div className="h-full max-w-400 w-full">
+              <p className="font-semibold p-4">eCommerce</p>
+              <div className="grid grid-rows-2 grid-cols-2 w-fit gap-7">
+                <CardStats data={statCardsData} />
+              </div>
             </div>
           </div>
         </main>
