@@ -45,7 +45,7 @@ export function OrdersTemplate({
 }: OrdersTemplateProps) {
     return (
         <div className="flex-1 overflow-auto p-8">
-            <div className="w-full max-w-300 mx-auto space-y-6">
+            <div className="w-full max-w-[1200px] mx-auto space-y-6">
                 <h1 className="text-lg font-semibold text-primary">Order List</h1>
 
                 <OrderToolbar

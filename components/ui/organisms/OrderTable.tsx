@@ -57,7 +57,7 @@ export function OrderTable({
 
     return (
         <div className="bg-white dark:bg-transparent rounded-lg h-auto max-h-[645px]">
-            <Table className="table-fixed w-full">
+            <Table className="w-full min-w-[1000px]">
                 <TableHeader>
                     <TableRow className="hover:bg-transparent border-b border-neutral-700">
                         <TableHead className="w-12.5 pl-4">
@@ -80,7 +80,7 @@ export function OrderTable({
                         <TableHead className="text-[12px] font-normal text-gray-400 w-[150px]">
                             Project
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[250px]">
                             Address
                         </TableHead>
                         <TableHead className="text-[12px] font-normal text-gray-400 w-[140px]">
@@ -136,7 +136,7 @@ export function OrderTable({
                                 <TableCell className="text-sm text-primary">
                                     {order.project}
                                 </TableCell>
-                                <TableCell className="text-sm text-primary">
+                                <TableCell className="text-sm text-primary max-w-[250px] truncate" title={order.address}>
                                     {order.address}
                                 </TableCell>
                                 <TableCell>
