@@ -5,7 +5,7 @@ import { RevenueByLocation } from '@/components/ui/molecules/RevenueByLocation'
 import { RevenueChart } from '@/components/ui/molecules/RevenueChart'
 import { TopSellingProducts } from '@/components/ui/molecules/TopSellingProducts'
 import { TotalSales } from '@/components/ui/molecules/TotalSales'
-import { Spinner } from '@/components/ui/spinner'
+import { Spinner } from '@/components/ui/atoms/Spinner'
 import { statCardsData, topSellingProductsData } from '@/constants/homePage'
 import { useState, useEffect } from 'react'
 
