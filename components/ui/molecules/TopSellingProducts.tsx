@@ -12,7 +12,7 @@ interface TopSellingProductsProps {
 export function TopSellingProducts({ data }: TopSellingProductsProps) {
   return (
     <div
-      className="w-full max-w-[662px] h-full max-h-[336px] bg-[#F7F9FB]
+      className="w-full max-w-[662px] h-full lg:max-h-[336px] bg-[#F7F9FB]
         dark:bg-[#272727] rounded-lg p-6"
     >
       <h3 className="text-[14px] font-semibold text-primary mb-6">

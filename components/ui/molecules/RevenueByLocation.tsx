@@ -3,7 +3,7 @@ import Image from 'next/image'
 export function RevenueByLocation() {
   return (
     <div
-      className="rounded-lg w-[202px] flex items-center justify-start gap-4
+      className="rounded-lg w-full xl:w-[202px] flex items-center justify-start gap-4
         flex-col bg-[#F7F9FB] dark:bg-[#272727] p-4"
     >
       <p className="text-[14px] font-semibold">Revenue by Location</p>

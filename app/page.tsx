@@ -57,32 +57,32 @@ export default function Home() {
 
   return (
     <motion.div
-      className="w-full flex-col mx-auto p-8 flex items-start justify-center h-full"
+      className="w-fit flex-col mx-auto p-8 flex items-start justify-center h-full"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
     >
       <div
-        className="h-full flex-col max-w-400 w-full space-y-6 flex items-center
+        className="h-full flex-col w-full space-y-6 flex items-center
           justify-start gap-4"
       >
-        <div className="max-w-fit w-full flex flex-col gap-7">
+        <div className="w-full flex flex-col gap-7">
           <motion.p variants={itemVariants} className="font-semibold px-4 mr-auto">
             eCommerce
           </motion.p>
-          <div className="w-full h-fit flex justify-between items-center gap-7">
-            <motion.div variants={itemVariants} className="grid grid-rows-2 grid-cols-2 w-fit gap-6">
+          <div className="w-full h-fit flex flex-col xl:flex-row justify-between items-center gap-7">
+            <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 w-full xl:w-fit gap-6">
               <CardStats data={statCardsData} />
             </motion.div>
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="w-full xl:w-fit">
               <ProjectionsVsActualsChart />
             </motion.div>
           </div>
-          <motion.div variants={itemVariants} className="flex gap-7">
+          <motion.div variants={itemVariants} className="flex flex-col xl:flex-row gap-7 w-full">
             <RevenueChart />
             <RevenueByLocation />
           </motion.div>
-          <motion.div variants={itemVariants} className="flex gap-2 pb-7 items-center justify-between w-full">
+          <motion.div variants={itemVariants} className="flex flex-col xl:flex-row gap-7 xl:gap-2 pb-7 items-center justify-between w-full">
             <TopSellingProducts data={topSellingProductsData} />
             <TotalSales />
           </motion.div>

@@ -24,7 +24,7 @@ export function StatCard({
   return (
     <div
       className={cn(
-        'w-50.5 h-28 flex items-start gap-y-3 flex-col rounded-xl p-6',
+        'w-full xl:w-50.5 h-28 flex items-start gap-y-3 flex-col rounded-xl p-6',
         bgColor,
         className
       )}

@@ -57,6 +57,8 @@ function SidebarProvider({
   defaultOpen = true,
   open: openProp,
   onOpenChange: setOpenProp,
+  openMobile: openMobileProp,
+  onOpenMobileChange: setOpenMobileProp,
   className,
   style,
   children,
@@ -66,10 +68,26 @@ function SidebarProvider({
   defaultOpen?: boolean
   open?: boolean
   onOpenChange?: (open: boolean) => void
+  openMobile?: boolean
+  onOpenMobileChange?: (open: boolean) => void
   width: string
 }) {
   const isMobile = useIsMobile()
-  const [openMobile, setOpenMobile] = React.useState(false)
+  const [openMobileState, setOpenMobileState] = React.useState(false)
+
+  const openMobile = openMobileProp ?? openMobileState
+
+  const setOpenMobile = React.useCallback(
+    (value: boolean | ((value: boolean) => boolean)) => {
+      const openState = typeof value === 'function' ? value(openMobile) : value
+      if (setOpenMobileProp) {
+        setOpenMobileProp(openState)
+      } else {
+        setOpenMobileState(openState)
+      }
+    },
+    [setOpenMobileProp, openMobile]
+  )
 
   // This is the internal state of the sidebar.
   // We use openProp and setOpenProp for control from outside the component.
@@ -608,7 +626,7 @@ function SidebarMenuAction({
         'peer-data-[size=lg]/menu-button:top-2.5',
         'group-data-[collapsible=icon]:hidden',
         showOnHover &&
-          `peer-data-[active=true]/menu-button:text-sidebar-accent-foreground
+        `peer-data-[active=true]/menu-button:text-sidebar-accent-foreground
           group-focus-within/menu-item:opacity-100
           group-hover/menu-item:opacity-100 data-[state=open]:opacity-100
           md:opacity-0`,

@@ -12,7 +12,7 @@ const data = [
 export function TotalSales() {
   return (
     <div
-      className="w-full max-w-[202px] bg-[#F7F9FB] h-[338px] dark:bg-[#272727]
+      className="w-full xl:max-w-[202px] bg-[#F7F9FB] h-[338px] dark:bg-[#272727]
         rounded-lg p-4 flex flex-col justify-between"
     >
       <h3 className="text-[14px] font-semibold text-primary">Total Sales</h3>
