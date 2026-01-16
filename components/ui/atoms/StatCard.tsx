@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils'
 import { ClassValue } from 'clsx'
 import { ReactSVG } from 'react-svg'
+import { motion } from 'framer-motion'
 
 export function StatCard({
   name,
@@ -22,9 +23,12 @@ export function StatCard({
     : 'text-[#1C1C1C]'
 
   return (
-    <div
+    <motion.div
+      whileHover={{ y: -4, scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
       className={cn(
-        'w-full xl:w-50.5 h-28 flex items-start gap-y-3 flex-col rounded-xl p-6',
+        'w-full xl:w-50.5 h-28 flex items-start gap-y-3 flex-col rounded-xl p-6 cursor-pointer',
         bgColor,
         className
       )}
@@ -55,6 +59,6 @@ export function StatCard({
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

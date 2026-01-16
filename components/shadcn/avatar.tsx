@@ -21,16 +21,24 @@ function Avatar({
   )
 }
 
+import { motion } from 'framer-motion'
+
 function AvatarImage({
   className,
   ...props
 }: React.ComponentProps<typeof AvatarPrimitive.Image>) {
   return (
     <AvatarPrimitive.Image
-      data-slot="avatar-image"
-      className={cn('aspect-square size-full', className)}
+      asChild
       {...props}
-    />
+    >
+      <motion.img
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className={cn('aspect-square size-full', className)}
+      />
+    </AvatarPrimitive.Image>
   )
 }
 

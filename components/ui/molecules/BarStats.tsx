@@ -18,9 +18,15 @@ const data = [
   { month: 'Jun', actual: 20, projection: 5 },
 ]
 
+import { motion } from 'framer-motion'
+
 export function ProjectionsVsActualsChart() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full xl:w-108 h-[252px] bg-white bg-[#F7F9FB]
         dark:bg-[#272727] rounded-lg p-6"
     >
@@ -80,6 +86,6 @@ export function ProjectionsVsActualsChart() {
           />
         </BarChart>
       </ResponsiveContainer>
-    </div>
+    </motion.div>
   )
 }

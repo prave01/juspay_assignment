@@ -18,9 +18,15 @@ const data = [
   { month: 'Jun', currentWeek: null, projection: 21, previousWeek: 25 },
 ]
 
+import { motion } from 'framer-motion'
+
 export function RevenueChart() {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
       className="w-full max-w-165.5 p-5 h-78 bg-[#F7F9FB] dark:bg-[#272727]
         rounded-lg"
     >
@@ -108,6 +114,6 @@ export function RevenueChart() {
           />
         </LineChart>
       </ResponsiveContainer>
-    </div>
+    </motion.div>
   )
 }
