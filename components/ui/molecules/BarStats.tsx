@@ -21,7 +21,7 @@ const data = [
 export function ProjectionsVsActualsChart() {
   return (
     <div
-      className="w-full max-w-108 h-[252px] bg-white bg-[#F7F9FB]
+      className="w-108 h-[252px] bg-white bg-[#F7F9FB]
         dark:bg-[#272727] rounded-lg p-6"
     >
       <h3 className="text-lg font-bold text-primary mb-6">

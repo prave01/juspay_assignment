@@ -9,6 +9,7 @@ import { CardStats } from "@/components/ui/molecules/CardStats";
 import { Spinner } from "@/components/ui/spinner";
 import { statCardsData, topSellingProductsData } from "@/constants/homePage";
 import { useEffect, useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,30 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
   if (loading) {
     return (
       <div className="h-full w-full flex items-center justify-center min-h-[80vh]">
@@ -31,35 +56,38 @@ export default function Home() {
   }
 
   return (
-    <div
-      className="w-full flex-col mx-auto p-8 flex items-start justify-center
-        h-full"
+    <motion.div
+      className="w-full flex-col mx-auto p-8 flex items-start justify-center h-full"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
     >
       <div
         className="h-full flex-col max-w-400 w-full space-y-6 flex items-center
           justify-start gap-4"
       >
-        {" "}
         <div className="max-w-fit w-full flex flex-col gap-7">
-          {" "}
-          <p className="font-semibold px-4 mr-auto">eCommerce</p>
-          <div className="w-full h-fit flex justify-center items-center gap-7">
-            {" "}
-            <div className="grid grid-rows-2 grid-cols-2 w-fit gap-6">
+          <motion.p variants={itemVariants} className="font-semibold px-4 mr-auto">
+            eCommerce
+          </motion.p>
+          <div className="w-full h-fit flex justify-between items-center gap-7">
+            <motion.div variants={itemVariants} className="grid grid-rows-2 grid-cols-2 w-fit gap-6">
               <CardStats data={statCardsData} />
-            </div>
-            <ProjectionsVsActualsChart />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <ProjectionsVsActualsChart />
+            </motion.div>
           </div>
-          <div className="flex gap-7">
+          <motion.div variants={itemVariants} className="flex gap-7">
             <RevenueChart />
             <RevenueByLocation />
-          </div>
-          <div className="flex gap-2 pb-7 items-center justify-between w-full">
+          </motion.div>
+          <motion.div variants={itemVariants} className="flex gap-2 pb-7 items-center justify-between w-full">
             <TopSellingProducts data={topSellingProductsData} />
             <TotalSales />
-          </div>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
