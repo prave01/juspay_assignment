@@ -58,7 +58,6 @@ export const ordersData: Order[] = [
     date: 'Feb 2, 2023',
     status: 'Rejected',
   },
-  // Duplicating data to demonstrate pagination
   {
     id: '#CM9806',
     user: { name: 'Koray Okurmus', image: '/contacts/con6.png' },

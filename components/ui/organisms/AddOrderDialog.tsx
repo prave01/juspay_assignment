@@ -40,10 +40,10 @@ export function AddOrderDialog({
         e.preventDefault()
 
         const newOrder: Order = {
-            id: `#CM${Math.floor(Math.random() * 10000)}`, // Simple ID generation
+            id: `#CM${Math.floor(Math.random() * 10000)}`,
             user: {
                 name,
-                image: `/contacts/con${Math.floor(Math.random() * 6) + 1}.png`, // Random avatar
+                image: `/contacts/con${Math.floor(Math.random() * 6) + 1}.png`,
             },
             project,
             address,
@@ -54,7 +54,6 @@ export function AddOrderDialog({
         onAddOrder(newOrder)
         onOpenChange(false)
 
-        // Reset form
         setName("")
         setProject("")
         setAddress("")
