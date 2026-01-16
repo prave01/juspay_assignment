@@ -18,7 +18,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/shadcn/select"
-import { Order, OrderStatus } from "@/constants/ordersPage"
+import { Order, OrderStatus } from "@/lib/types"
 
 interface AddOrderDialogProps {
     open: boolean

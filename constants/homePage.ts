@@ -1,6 +1,4 @@
-import { CardStatsType } from '@/components/ui/molecules/CardStats'
-import { NotificationBarItemType } from '@/components/ui/molecules/NotificationBarItem'
-import { type SidebarCategory } from '@/components/ui/organisms/AppSideBar'
+import { CardStatsType, NotificationBarItemType, SidebarCategory } from '@/lib/types'
 
 export const sidebarData: SidebarCategory[] = [
   {

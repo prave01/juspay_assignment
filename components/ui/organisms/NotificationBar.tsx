@@ -6,10 +6,8 @@ import {
   SidebarGroup,
   SidebarGroupContent,
 } from '@/components/shadcn/sidebar'
-import {
-  NotificationBarItem,
-  NotificationBarItemType,
-} from '../molecules/NotificationBarItem'
+import { NotificationBarItemType } from '@/lib/types'
+import { NotificationBarItem } from '../molecules/NotificationBarItem'
 
 export function NotificationBar({ data }: { data: NotificationBarItemType[] }) {
   return (

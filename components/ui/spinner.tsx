@@ -1,7 +1,7 @@
 import { Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-export interface SpinnerProps extends React.SVGProps<SVGSVGElement> {}
+import { SpinnerProps } from '@/lib/types'
 
 export function Spinner({ className, ...props }: SpinnerProps) {
   return (

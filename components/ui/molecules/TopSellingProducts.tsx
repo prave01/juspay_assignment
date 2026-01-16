@@ -1,13 +1,4 @@
-interface Product {
-  name: string
-  price: string
-  quantity: number
-  amount: string
-}
-
-interface TopSellingProductsProps {
-  data: Product[]
-}
+import { TopSellingProductsProps } from '@/lib/types'
 
 export function TopSellingProducts({ data }: TopSellingProductsProps) {
   return (

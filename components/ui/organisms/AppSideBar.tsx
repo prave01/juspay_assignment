@@ -13,21 +13,7 @@ import Image from 'next/image'
 import { SideBarSelect } from '../molecules/SideBarSelect'
 import Link from 'next/link'
 
-type SidebarSelectItem = {
-  name: string
-  href: string
-}
-
-type SidebarItem = {
-  name: string
-  iconPath: string
-  selectItems: SidebarSelectItem[]
-}
-
-export type SidebarCategory = {
-  category: string
-  items: SidebarItem[]
-}
+import { SidebarCategory } from '@/lib/types'
 
 export function SideBarClient({
   sidebarItems = [],

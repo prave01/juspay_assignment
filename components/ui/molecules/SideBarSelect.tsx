@@ -1,3 +1,4 @@
+import { SidebarSelectItem } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ export const SideBarSelect = ({
 }: {
   name: string
   iconPath: string
-  listItems: { name: string; href: string }[]
+  listItems: SidebarSelectItem[]
 }) => {
   const [open, setOpen] = useState(false)
   return (

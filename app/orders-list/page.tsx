@@ -1,6 +1,7 @@
 "use client";
 
-import { ordersData, Order } from "@/constants/ordersPage";
+import { ordersData } from "@/constants/ordersPage";
+import { Order } from "@/lib/types";
 import { useState } from "react";
 import { AddOrderDialog } from "@/components/ui/organisms/AddOrderDialog";
 import {

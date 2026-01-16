@@ -1,21 +1,4 @@
-export type OrderStatus =
-  | 'In Progress'
-  | 'Complete'
-  | 'Pending'
-  | 'Approved'
-  | 'Rejected'
-
-export interface Order {
-  id: string
-  user: {
-    name: string
-    image: string
-  }
-  project: string
-  address: string
-  date: string
-  status: OrderStatus
-}
+import { Order } from '@/lib/types'
 
 export const ordersData: Order[] = [
   {

@@ -1,14 +1,6 @@
+import { NotificationBarItemType } from '@/lib/types'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
-
-export type NotificationBarItemType = {
-  category: string
-  items: Array<{
-    image: string
-    message: string
-    description?: string
-  }>
-}
 
 export function NotificationBarItem({
   category,
