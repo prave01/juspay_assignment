@@ -92,7 +92,7 @@ export function OrderTable({
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <AnimatePresence mode="popLayout">
+                    <AnimatePresence>
                         {paginatedData.map((order, index) => (
                             <motion.tr
                                 key={order.id}
@@ -101,15 +101,11 @@ export function OrderTable({
                                 animate="visible"
                                 exit={{ opacity: 0, x: -20 }}
                                 variants={rowVariants}
-                                whileHover={{
-                                    backgroundColor: 'rgba(0, 0, 0, 0.02)',
-                                    transition: { duration: 0.2 },
-                                }}
-                                className={`hover:bg-sky-100/50 hover:dark:bg-neutral-500/40
+                                className={`hover:bg-gray-100/50 dark:hover:bg-neutral-800/50
                   border-b border-transparent dark:border-neutral-700/40
-                  cursor-pointer transition-colors
+                  cursor-pointer transition-colors duration-200
                   ${selectedRows.includes(order.id)
-                                        ? 'bg-gray-50 dark:bg-neutral-500/40'
+                                        ? 'bg-gray-100/80 dark:bg-neutral-800/80'
                                         : ''
                                     }`}
                                 onClick={() => toggleRowSelection(order.id)}
