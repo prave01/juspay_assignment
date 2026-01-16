@@ -43,7 +43,9 @@ describe('OrdersList Page', () => {
         await userEvent.type(searchInput, 'John')
 
         expect(screen.getByText('John Doe')).toBeInTheDocument()
-        expect(screen.queryByText('Jane Smith')).not.toBeInTheDocument()
+        await waitFor(() => {
+            expect(screen.queryByText('Jane Smith')).not.toBeInTheDocument()
+        })
     })
 
     it('opens the add order dialog when plus button is clicked', async () => {
@@ -83,7 +85,9 @@ describe('OrdersList Page', () => {
         await userEvent.click(pendingOption)
 
         expect(screen.getByText('Jane Smith')).toBeInTheDocument()
-        expect(screen.queryByText('John Doe')).not.toBeInTheDocument()
+        await waitFor(() => {
+            expect(screen.queryByText('John Doe')).not.toBeInTheDocument()
+        })
     })
 
     it('sorts orders by date', async () => {
