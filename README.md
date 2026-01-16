@@ -54,3 +54,23 @@ npm run prettier:write
 ```
 
 The project also uses ESLint to catch potential issues and enforce best practices.
+
+## Testing
+
+We use **Vitest** and **React Testing Library** for integration and component testing. The tests are designed to simulate user interactions and ensure the application behaves as expected.
+
+To run the tests:
+```bash
+npm test
+```
+
+To run tests in watch mode during development:
+```bash
+npm run test:watch
+```
+
+The current test suite covers:
+- **Rendering**: Ensures pages and components load correctly.
+- **Search Functionality**: Verifies that filtering by search query works as expected.
+- **CRUD Operations**: Tests the ability to add new orders via dialogs.
+- **Filtering & Sorting**: Validates that status filters and date sorting logic are accurate.

@@ -117,6 +117,7 @@ export default function OrdersList() {
             <Button
               variant="ghost"
               size="icon"
+              aria-label="Add Order"
               className="h-8 w-8 text-primary hover:bg-gray-200
                 dark:hover:bg-neutral-700"
               onClick={() => setIsAddDialogOpen(true)}
@@ -128,6 +129,7 @@ export default function OrdersList() {
                 <Button
                   variant="ghost"
                   size="icon"
+                  aria-label="Filter Status"
                   className={`size-8 text-primary hover:bg-gray-200
                     dark:hover:bg-neutral-700
                     ${statusFilter ? 'bg-gray-300 dark:bg-neutral-600' : ''}`}
@@ -164,6 +166,7 @@ export default function OrdersList() {
             <Button
               variant="ghost"
               size="icon"
+              aria-label="Sort Orders"
               className={`h-8 w-8 text-primary hover:bg-gray-200
                 dark:hover:bg-neutral-700
                 ${sortOrder ? 'bg-gray-300 dark:bg-neutral-600' : ''}`}
@@ -315,11 +318,10 @@ export default function OrdersList() {
               <Button
                 key={page}
                 variant={currentPage === page ? 'secondary' : 'ghost'}
-                className={`h-8 w-8 text-sm ${
-                  currentPage === page
+                className={`h-8 w-8 text-sm ${currentPage === page
                     ? 'bg-gray-100 dark:bg-neutral-700 text-primary font-medium'
                     : 'text-gray-500'
-                }`}
+                  }`}
                 onClick={() => setCurrentPage(page)}
               >
                 {page}
