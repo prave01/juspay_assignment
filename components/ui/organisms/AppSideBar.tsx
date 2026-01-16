@@ -27,7 +27,7 @@ export function SideBarClient({
       >
         <SidebarGroup className="flex-row p-0 m-0 gap-x-2 items-center">
           <Avatar className="size-6">
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarImage src="/User.png" alt="@User" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <span>ByeWind</span>
