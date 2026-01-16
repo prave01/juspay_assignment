@@ -6,6 +6,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
   DialogFooter,
 } from '@/components/shadcn/dialog'
 import { Button } from '@/components/shadcn/button'
@@ -65,6 +66,9 @@ export function AddOrderDialog({
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle>Add New Order</DialogTitle>
+          <DialogDescription>
+            Fill in the details below to create a new order in the system.
+          </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">

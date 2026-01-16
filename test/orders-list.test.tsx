@@ -90,12 +90,20 @@ describe('OrdersList Page', () => {
         render(<OrdersList />)
         const sortButton = screen.getByRole('button', { name: /sort orders/i })
 
+        // Open dropdown and select Oldest First
         await userEvent.click(sortButton)
+        const oldestOption = screen.getByRole('menuitemcheckbox', { name: /oldest first/i })
+        await userEvent.click(oldestOption)
+
         let rows = screen.getAllByRole('row')
         expect(rows[1]).toHaveTextContent('John Doe')
         expect(rows[2]).toHaveTextContent('Jane Smith')
 
+        // Open dropdown and select Newest First
         await userEvent.click(sortButton)
+        const newestOption = screen.getByRole('menuitemcheckbox', { name: /newest first/i })
+        await userEvent.click(newestOption)
+
         rows = screen.getAllByRole('row')
         expect(rows[1]).toHaveTextContent('Jane Smith')
         expect(rows[2]).toHaveTextContent('John Doe')

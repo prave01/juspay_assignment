@@ -18,6 +18,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/shadcn/avatar'
 import {
   Plus,
   ArrowUpDown,
+  ArrowUp,
+  ArrowDown,
   Search,
   Calendar,
   MoreHorizontal,
@@ -163,23 +165,46 @@ export default function OrdersList() {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Sort Orders"
-              className={`h-8 w-8 text-primary hover:bg-gray-200
-                dark:hover:bg-neutral-700
-                ${sortOrder ? 'bg-gray-300 dark:bg-neutral-600' : ''}`}
-              onClick={() =>
-                setSortOrder((prev) => {
-                  if (prev === 'asc') return 'desc'
-                  if (prev === 'desc') return null
-                  return 'asc'
-                })
-              }
-            >
-              <ArrowUpDown className="size-4.5" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  aria-label="Sort Orders"
+                  className={`h-8 w-8 text-primary hover:bg-gray-200
+                    dark:hover:bg-neutral-700
+                    ${sortOrder ? 'bg-gray-300 dark:bg-neutral-600' : ''}`}
+                >
+                  <ArrowUpDown className="size-4.5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start">
+                <DropdownMenuCheckboxItem
+                  checked={sortOrder === null}
+                  onCheckedChange={() => setSortOrder(null)}
+                >
+                  <span className='pl-1.5'>Default</span>
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem
+                  checked={sortOrder === 'desc'}
+                  onCheckedChange={() => setSortOrder('desc')}
+                >
+                  <div className="flex items-center justify-start gap-2">
+                    <ArrowDown className="size-4" />
+                    <span>Newest First</span>
+                  </div>
+                </DropdownMenuCheckboxItem>
+                <DropdownMenuCheckboxItem
+                  checked={sortOrder === 'asc'}
+                  onCheckedChange={() => setSortOrder('asc')}
+                >
+                  <div className="flex items-center gap-2">
+                    <ArrowUp className="size-4" />
+                    <span>Oldest First</span>
+                  </div>
+                </DropdownMenuCheckboxItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
           <div
             className="relative dark:bg-neutral-900 bg-white rounded-lg border-2
@@ -319,8 +344,8 @@ export default function OrdersList() {
                 key={page}
                 variant={currentPage === page ? 'secondary' : 'ghost'}
                 className={`h-8 w-8 text-sm ${currentPage === page
-                    ? 'bg-gray-100 dark:bg-neutral-700 text-primary font-medium'
-                    : 'text-gray-500'
+                  ? 'bg-gray-100 dark:bg-neutral-700 text-primary font-medium'
+                  : 'text-gray-500'
                   }`}
                 onClick={() => setCurrentPage(page)}
               >
