@@ -1,4 +1,8 @@
-import { CardStatsType, NotificationBarItemType, SidebarCategory } from '@/lib/types'
+import {
+  CardStatsType,
+  NotificationBarItemType,
+  SidebarCategory,
+} from '@/lib/types'
 
 export const sidebarData: SidebarCategory[] = [
   {

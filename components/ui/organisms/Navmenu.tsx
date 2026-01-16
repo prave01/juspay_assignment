@@ -1,6 +1,6 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 import Image from 'next/image'
 import { Search } from 'lucide-react'
 import { SideBarTrigger } from '../molecules/SideBarTrigger'
@@ -43,8 +43,9 @@ export function NavMenu({
           <button
             type="button"
             onClick={() => setOpen(true)}
-            className="w-8 h-8 md:w-40 md:h-7 px-0 md:px-3 rounded-md bg-secondary flex items-center
-              justify-center md:justify-between gap-x-2"
+            className="w-8 h-8 md:w-40 md:h-7 px-0 md:px-3 rounded-md
+              bg-secondary flex items-center justify-center md:justify-between
+              gap-x-2"
           >
             <div
               className="flex gap-1 text-muted-foreground items-center
@@ -54,7 +55,12 @@ export function NavMenu({
               <Search className="size-4 text-muted-foreground" />
               <span className="hidden md:block">Search</span>
             </div>
-            <kbd className="hidden md:inline-flex pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+            <kbd
+              className="hidden md:inline-flex pointer-events-none h-5
+                select-none items-center gap-1 rounded border bg-muted px-1.5
+                font-mono text-[10px] font-medium text-muted-foreground
+                opacity-100"
+            >
               <span className="text-xs">⌘</span>/
             </kbd>
           </button>

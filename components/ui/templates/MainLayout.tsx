@@ -23,7 +23,9 @@ export function MainLayout({ children }: { children: React.ReactNode }) {
     }
   }
 
-  const handleSetOpenRight = (value: boolean | ((prev: boolean) => boolean)) => {
+  const handleSetOpenRight = (
+    value: boolean | ((prev: boolean) => boolean)
+  ) => {
     if (isMobile) {
       setOpenRightMobile(value)
     } else {
