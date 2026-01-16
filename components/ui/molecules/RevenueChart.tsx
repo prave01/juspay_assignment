@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import {
   LineChart,
@@ -7,18 +7,18 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
-} from 'recharts'
+} from "recharts";
 
 const data = [
-  { month: 'Jan', currentWeek: 13, projection: null, previousWeek: 8 },
-  { month: 'Feb', currentWeek: 8, projection: null, previousWeek: 18 },
-  { month: 'Mar', currentWeek: 10, projection: null, previousWeek: 16 },
-  { month: 'Apr', currentWeek: 16, projection: 16, previousWeek: 12 },
-  { month: 'May', currentWeek: null, projection: 20, previousWeek: 10 },
-  { month: 'Jun', currentWeek: null, projection: 21, previousWeek: 25 },
-]
+  { month: "Jan", currentWeek: 13, projection: null, previousWeek: 8 },
+  { month: "Feb", currentWeek: 8, projection: null, previousWeek: 18 },
+  { month: "Mar", currentWeek: 10, projection: null, previousWeek: 16 },
+  { month: "Apr", currentWeek: 16, projection: 16, previousWeek: 12 },
+  { month: "May", currentWeek: null, projection: 20, previousWeek: 10 },
+  { month: "Jun", currentWeek: null, projection: 21, previousWeek: 25 },
+];
 
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 export function RevenueChart() {
   return (
@@ -26,9 +26,9 @@ export function RevenueChart() {
       initial={{ opacity: 0, scale: 0.98 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="w-full max-w-165.5 p-5 h-78 bg-[#F7F9FB] dark:bg-[#272727]
-        rounded-lg"
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="w-full max-w-165.5 p-5 h-full xl:h-78 bg-[#F7F9FB]
+        dark:bg-[#272727] rounded-lg"
     >
       <div className="flex items-center mb-3 gap-6">
         <h3 className="text-[14px] font-semibold text-primary">Revenue</h3>
@@ -37,14 +37,14 @@ export function RevenueChart() {
           <div className="flex items-center gap-2">
             <div className="size-1.5 rounded-full bg-black dark:bg-[#C6C7F8]"></div>
             <span className="text-gray-600 dark:text-white">
-              Current Week{' '}
+              Current Week{" "}
               <span className="font-semibold pl-1 text-primary">$58,211</span>
             </span>
           </div>
           <div className="flex items-center gap-2">
             <div className="size-1.5 rounded-full bg-[#A5C4D4]"></div>
             <span className="text-gray-600 dark:text-white">
-              Previous Week{' '}
+              Previous Week{" "}
               <span className="font-semibold pl-1 text-primary">$68,788</span>
             </span>
           </div>
@@ -66,7 +66,7 @@ export function RevenueChart() {
             dataKey="month"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#9CA3AF', fontSize: 13, fontWeight: 400 }}
+            tick={{ fill: "#9CA3AF", fontSize: 13, fontWeight: 400 }}
             tickMargin={12}
             padding={{ left: 30, right: 30 }}
           />
@@ -74,8 +74,8 @@ export function RevenueChart() {
           <YAxis
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#9CA3AF', fontSize: 13, fontWeight: 400 }}
-            tickFormatter={(value) => (value === 0 ? '0' : `${value}M`)}
+            tick={{ fill: "#9CA3AF", fontSize: 13, fontWeight: 400 }}
+            tickFormatter={(value) => (value === 0 ? "0" : `${value}M`)}
             ticks={[0, 10, 20, 30]}
             domain={[0, 30]}
             tickMargin={8}
@@ -115,5 +115,5 @@ export function RevenueChart() {
         </LineChart>
       </ResponsiveContainer>
     </motion.div>
-  )
+  );
 }
