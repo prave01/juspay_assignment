@@ -1,14 +1,13 @@
 "use client";
-
 import { ProjectionsVsActualsChart } from "@/components/ui/molecules/BarStats";
-import { RevenueChart } from "@/components/ui/molecules/RevenueChart";
+import { CardStats } from "@/components/ui/molecules/CardStats";
 import { RevenueByLocation } from "@/components/ui/molecules/RevenueByLocation";
+import { RevenueChart } from "@/components/ui/molecules/RevenueChart";
 import { TopSellingProducts } from "@/components/ui/molecules/TopSellingProducts";
 import { TotalSales } from "@/components/ui/molecules/TotalSales";
-import { CardStats } from "@/components/ui/molecules/CardStats";
 import { Spinner } from "@/components/ui/spinner";
 import { statCardsData, topSellingProductsData } from "@/constants/homePage";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -43,18 +42,18 @@ export default function Home() {
         <div className="max-w-fit w-full flex flex-col gap-7">
           {" "}
           <p className="font-semibold px-4 mr-auto">eCommerce</p>
-          <div className="w-full h-fit flex justify-center items-center gap-7">
+          <div className="w-full h-fit flex justify-center items-center gap-[28px]">
             {" "}
             <div className="grid grid-rows-2 grid-cols-2 w-fit gap-6">
               <CardStats data={statCardsData} />
             </div>
             <ProjectionsVsActualsChart />
           </div>
-          <div className="flex gap-7">
+          <div className="flex gap-[28px]">
             <RevenueChart />
             <RevenueByLocation />
           </div>
-          <div className="flex gap-2 pb-7 items-center justify-between w-full">
+          <div className="flex gap-2 pb-[28px] items-center justify-between w-full">
             <TopSellingProducts data={topSellingProductsData} />
             <TotalSales />
           </div>

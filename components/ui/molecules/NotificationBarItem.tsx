@@ -1,14 +1,14 @@
-import { cn } from "@/lib/utils";
-import Image from "next/image";
+import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 export type NotificationBarItemType = {
-  category: string;
+  category: string
   items: Array<{
-    image: string;
-    message: string;
-    description?: string;
-  }>;
-};
+    image: string
+    message: string
+    description?: string
+  }>
+}
 
 export function NotificationBarItem({
   category,
@@ -19,24 +19,29 @@ export function NotificationBarItem({
       <p className="font-semibold text-[14px]">{category}</p>
       <div
         className={cn(
-          "px-0.5 pt-0.5 flex items-start flex-col",
-          category === "Activities" ? "gap-2" : "gap-5",
+          'px-0.5 pt-0.5 flex items-start flex-col',
+          category === 'Activities' ? 'gap-2' : 'gap-5'
         )}
       >
         {items.map((i, idx) => (
           <div className="flex gap-3" key={idx}>
-            {" "}
+            {' '}
             <div className="flex flex-col gap-2 items-center justify-center">
-              {" "}
+              {' '}
               <Image
                 src={i.image}
                 width={500}
                 height={500}
                 className="size-6"
-                alt={"image"}
+                alt={'image'}
               />
-              {category === "Activities" && (
-                <span className=" text-[12px] dark:text-neutral-700 font-normal text-neutral-200">|</span>
+              {category === 'Activities' && items.length !== idx + 1 && (
+                <span
+                  className="text-[12px] dark:text-neutral-700 font-normal
+                    text-neutral-200"
+                >
+                  |
+                </span>
               )}
             </div>
             <div className="flex items-start justify-start flex-col">
@@ -47,5 +52,5 @@ export function NotificationBarItem({
         ))}
       </div>
     </div>
-  );
+  )
 }

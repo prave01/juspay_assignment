@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import {
   BarChart,
@@ -7,20 +7,23 @@ import {
   YAxis,
   CartesianGrid,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts'
 
 const data = [
-  { month: "Jan", actual: 18, projection: 2 },
-  { month: "Feb", actual: 20, projection: 5 },
-  { month: "Mar", actual: 17, projection: 4 },
-  { month: "Apr", actual: 21, projection: 6 },
-  { month: "May", actual: 14, projection: 4 },
-  { month: "Jun", actual: 20, projection: 5 },
-];
+  { month: 'Jan', actual: 18, projection: 2 },
+  { month: 'Feb', actual: 20, projection: 5 },
+  { month: 'Mar', actual: 17, projection: 4 },
+  { month: 'Apr', actual: 21, projection: 6 },
+  { month: 'May', actual: 14, projection: 4 },
+  { month: 'Jun', actual: 20, projection: 5 },
+]
 
 export function ProjectionsVsActualsChart() {
   return (
-    <div className="w-full max-w-108 h-[252px] bg-white bg-[#F7F9FB] dark:bg-[#272727] rounded-lg p-6">
+    <div
+      className="w-full max-w-108 h-[252px] bg-white bg-[#F7F9FB]
+        dark:bg-[#272727] rounded-lg p-6"
+    >
       <h3 className="text-lg font-bold text-primary mb-6">
         Projections vs Actuals
       </h3>
@@ -42,15 +45,15 @@ export function ProjectionsVsActualsChart() {
             dataKey="month"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "#9CA3AF", fontSize: 13, fontWeight: 400 }}
+            tick={{ fill: '#9CA3AF', fontSize: 13, fontWeight: 400 }}
             tickMargin={12}
           />
 
           <YAxis
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "#9CA3AF", fontSize: 13, fontWeight: 400 }}
-            tickFormatter={(value) => (value === 0 ? "0" : `${value}M`)}
+            tick={{ fill: '#9CA3AF', fontSize: 13, fontWeight: 400 }}
+            tickFormatter={(value) => (value === 0 ? '0' : `${value}M`)}
             ticks={[0, 10, 20, 30]}
             domain={[0, 30]}
             tickMargin={4}
@@ -78,5 +81,5 @@ export function ProjectionsVsActualsChart() {
         </BarChart>
       </ResponsiveContainer>
     </div>
-  );
+  )
 }

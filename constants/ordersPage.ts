@@ -1,137 +1,142 @@
-export type OrderStatus = "In Progress" | "Complete" | "Pending" | "Approved" | "Rejected";
+export type OrderStatus =
+  | 'In Progress'
+  | 'Complete'
+  | 'Pending'
+  | 'Approved'
+  | 'Rejected'
 
 export interface Order {
-    id: string;
-    user: {
-        name: string;
-        image: string;
-    };
-    project: string;
-    address: string;
-    date: string;
-    status: OrderStatus;
+  id: string
+  user: {
+    name: string
+    image: string
+  }
+  project: string
+  address: string
+  date: string
+  status: OrderStatus
 }
 
 export const ordersData: Order[] = [
-    {
-        id: "#CM9801",
-        user: { name: "Natali Craig", image: "/contacts/con1.png" },
-        project: "Landing Page",
-        address: "Meadow Lane Oakland",
-        date: "Just now",
-        status: "In Progress",
-    },
-    {
-        id: "#CM9802",
-        user: { name: "Kate Morrison", image: "/contacts/con5.png" },
-        project: "CRM Admin pages",
-        address: "Larry San Francisco",
-        date: "A minute ago",
-        status: "Complete",
-    },
-    {
-        id: "#CM9803",
-        user: { name: "Drew Cano", image: "/contacts/con2.png" },
-        project: "Client Project",
-        address: "Bagwell Avenue Ocala",
-        date: "1 hour ago",
-        status: "Pending",
-    },
-    {
-        id: "#CM9804",
-        user: { name: "Orlando Diggs", image: "/contacts/con3.png" },
-        project: "Admin Dashboard",
-        address: "Washburn Baton Rouge",
-        date: "Yesterday",
-        status: "Approved",
-    },
-    {
-        id: "#CM9805",
-        user: { name: "Andi Lane", image: "/contacts/con4.png" },
-        project: "App Landing Page",
-        address: "Nest Lane Olivette",
-        date: "Feb 2, 2023",
-        status: "Rejected",
-    },
-    // Duplicating data to demonstrate pagination
-    {
-        id: "#CM9806",
-        user: { name: "Koray Okurmus", image: "/contacts/con6.png" },
-        project: "E-commerce Shop",
-        address: "Spruce Drive Pittsburgh",
-        date: "Feb 10, 2023",
-        status: "In Progress",
-    },
-    {
-        id: "#CM9807",
-        user: { name: "Natali Craig", image: "/contacts/con1.png" },
-        project: "Dashboard UI",
-        address: "Meadow Lane Oakland",
-        date: "Feb 12, 2023",
-        status: "Complete",
-    },
-    {
-        id: "#CM9808",
-        user: { name: "Kate Morrison", image: "/contacts/con5.png" },
-        project: "Mobile App",
-        address: "Larry San Francisco",
-        date: "Feb 14, 2023",
-        status: "Pending",
-    },
-    {
-        id: "#CM9809",
-        user: { name: "Drew Cano", image: "/contacts/con2.png" },
-        project: "Marketing Site",
-        address: "Bagwell Avenue Ocala",
-        date: "Feb 15, 2023",
-        status: "Approved",
-    },
-    {
-        id: "#CM9810",
-        user: { name: "Orlando Diggs", image: "/contacts/con3.png" },
-        project: "SaaS Platform",
-        address: "Washburn Baton Rouge",
-        date: "Feb 18, 2023",
-        status: "Rejected",
-    },
-    {
-        id: "#CM9811",
-        user: { name: "Andi Lane", image: "/contacts/con4.png" },
-        project: "Portfolio Site",
-        address: "Nest Lane Olivette",
-        date: "Feb 20, 2023",
-        status: "In Progress",
-    },
-    {
-        id: "#CM9812",
-        user: { name: "Koray Okurmus", image: "/contacts/con6.png" },
-        project: "Blog Template",
-        address: "Spruce Drive Pittsburgh",
-        date: "Feb 22, 2023",
-        status: "Complete",
-    },
-    {
-        id: "#CM9813",
-        user: { name: "Natali Craig", image: "/contacts/con1.png" },
-        project: "Social Media App",
-        address: "Meadow Lane Oakland",
-        date: "Feb 25, 2023",
-        status: "Pending",
-    },
-    {
-        id: "#CM9814",
-        user: { name: "Kate Morrison", image: "/contacts/con5.png" },
-        project: "Analytics Dashboard",
-        address: "Larry San Francisco",
-        date: "Feb 28, 2023",
-        status: "Approved",
-    },
-    {
-        id: "#CM9815",
-        user: { name: "Drew Cano", image: "/contacts/con2.png" },
-        project: "Travel Booking",
-        address: "Bagwell Avenue Ocala",
-        date: "Mar 1, 2023",
-        status: "Rejected",
-    },
-];
+  {
+    id: '#CM9801',
+    user: { name: 'Natali Craig', image: '/contacts/con1.png' },
+    project: 'Landing Page',
+    address: 'Meadow Lane Oakland',
+    date: 'Just now',
+    status: 'In Progress',
+  },
+  {
+    id: '#CM9802',
+    user: { name: 'Kate Morrison', image: '/contacts/con5.png' },
+    project: 'CRM Admin pages',
+    address: 'Larry San Francisco',
+    date: 'A minute ago',
+    status: 'Complete',
+  },
+  {
+    id: '#CM9803',
+    user: { name: 'Drew Cano', image: '/contacts/con2.png' },
+    project: 'Client Project',
+    address: 'Bagwell Avenue Ocala',
+    date: '1 hour ago',
+    status: 'Pending',
+  },
+  {
+    id: '#CM9804',
+    user: { name: 'Orlando Diggs', image: '/contacts/con3.png' },
+    project: 'Admin Dashboard',
+    address: 'Washburn Baton Rouge',
+    date: 'Yesterday',
+    status: 'Approved',
+  },
+  {
+    id: '#CM9805',
+    user: { name: 'Andi Lane', image: '/contacts/con4.png' },
+    project: 'App Landing Page',
+    address: 'Nest Lane Olivette',
+    date: 'Feb 2, 2023',
+    status: 'Rejected',
+  },
+  // Duplicating data to demonstrate pagination
+  {
+    id: '#CM9806',
+    user: { name: 'Koray Okurmus', image: '/contacts/con6.png' },
+    project: 'E-commerce Shop',
+    address: 'Spruce Drive Pittsburgh',
+    date: 'Feb 10, 2023',
+    status: 'In Progress',
+  },
+  {
+    id: '#CM9807',
+    user: { name: 'Natali Craig', image: '/contacts/con1.png' },
+    project: 'Dashboard UI',
+    address: 'Meadow Lane Oakland',
+    date: 'Feb 12, 2023',
+    status: 'Complete',
+  },
+  {
+    id: '#CM9808',
+    user: { name: 'Kate Morrison', image: '/contacts/con5.png' },
+    project: 'Mobile App',
+    address: 'Larry San Francisco',
+    date: 'Feb 14, 2023',
+    status: 'Pending',
+  },
+  {
+    id: '#CM9809',
+    user: { name: 'Drew Cano', image: '/contacts/con2.png' },
+    project: 'Marketing Site',
+    address: 'Bagwell Avenue Ocala',
+    date: 'Feb 15, 2023',
+    status: 'Approved',
+  },
+  {
+    id: '#CM9810',
+    user: { name: 'Orlando Diggs', image: '/contacts/con3.png' },
+    project: 'SaaS Platform',
+    address: 'Washburn Baton Rouge',
+    date: 'Feb 18, 2023',
+    status: 'Rejected',
+  },
+  {
+    id: '#CM9811',
+    user: { name: 'Andi Lane', image: '/contacts/con4.png' },
+    project: 'Portfolio Site',
+    address: 'Nest Lane Olivette',
+    date: 'Feb 20, 2023',
+    status: 'In Progress',
+  },
+  {
+    id: '#CM9812',
+    user: { name: 'Koray Okurmus', image: '/contacts/con6.png' },
+    project: 'Blog Template',
+    address: 'Spruce Drive Pittsburgh',
+    date: 'Feb 22, 2023',
+    status: 'Complete',
+  },
+  {
+    id: '#CM9813',
+    user: { name: 'Natali Craig', image: '/contacts/con1.png' },
+    project: 'Social Media App',
+    address: 'Meadow Lane Oakland',
+    date: 'Feb 25, 2023',
+    status: 'Pending',
+  },
+  {
+    id: '#CM9814',
+    user: { name: 'Kate Morrison', image: '/contacts/con5.png' },
+    project: 'Analytics Dashboard',
+    address: 'Larry San Francisco',
+    date: 'Feb 28, 2023',
+    status: 'Approved',
+  },
+  {
+    id: '#CM9815',
+    user: { name: 'Drew Cano', image: '/contacts/con2.png' },
+    project: 'Travel Booking',
+    address: 'Bagwell Avenue Ocala',
+    date: 'Mar 1, 2023',
+    status: 'Rejected',
+  },
+]
