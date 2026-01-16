@@ -56,8 +56,8 @@ export function OrderTable({
     }
 
     return (
-        <div className="bg-white dark:bg-transparent rounded-lg">
-            <Table>
+        <div className="bg-white dark:bg-transparent rounded-lg h-auto max-h-[645px]">
+            <Table className="table-fixed w-full">
                 <TableHeader>
                     <TableRow className="hover:bg-transparent border-b border-neutral-700">
                         <TableHead className="w-12.5 pl-4">
@@ -71,35 +71,35 @@ export function OrderTable({
                                 onChange={toggleAllSelection}
                             />
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[100px]">
                             Order ID
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[180px]">
                             User
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[150px]">
                             Project
                         </TableHead>
                         <TableHead className="text-[12px] font-normal text-gray-400">
                             Address
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[140px]">
                             Date
                         </TableHead>
-                        <TableHead className="text-[12px] font-normal text-gray-400">
+                        <TableHead className="text-[12px] font-normal text-gray-400 w-[130px]">
                             Status
                         </TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <AnimatePresence>
+                    <AnimatePresence mode="wait">
                         {paginatedData.map((order, index) => (
                             <motion.tr
                                 key={order.id}
                                 custom={index}
                                 initial="hidden"
                                 animate="visible"
-                                exit={{ opacity: 0, x: -20 }}
+                                exit={{ opacity: 0, y: -10, transition: { duration: 0.2 } }}
                                 variants={rowVariants}
                                 className={`hover:bg-gray-100/50 dark:hover:bg-neutral-800/50
                   border-b border-transparent dark:border-neutral-700/40

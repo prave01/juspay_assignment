@@ -15,7 +15,7 @@ export function OrderPagination({
     setCurrentPage,
 }: OrderPaginationProps) {
     return (
-        <div className="flex items-center justify-end p-4 gap-2">
+        <div className="flex items-center justify-end gap-2">
             <Button
                 variant="ghost"
                 size="icon"
@@ -30,8 +30,8 @@ export function OrderPagination({
                     key={page}
                     variant={currentPage === page ? 'secondary' : 'ghost'}
                     className={`h-8 w-8 text-sm ${currentPage === page
-                            ? 'bg-gray-100 dark:bg-neutral-700 text-primary font-medium'
-                            : 'text-gray-500'
+                        ? 'bg-gray-100 dark:bg-neutral-700 text-primary font-medium'
+                        : 'text-gray-500'
                         }`}
                     onClick={() => setCurrentPage(page)}
                 >
