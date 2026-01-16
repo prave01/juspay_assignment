@@ -57,20 +57,15 @@ The project also uses ESLint to catch potential issues and enforce best practice
 
 ## Testing
 
-We use **Vitest** and **React Testing Library** for integration and component testing. The tests are designed to simulate user interactions and ensure the application behaves as expected.
+The project uses **Vitest** and **React Testing Library** with a **jsdom** environment. Tests are located in the `test/` directory, supported by a global setup file for browser API mocks.
 
-To run the tests:
+### Commands
 ```bash
-npm test
+npm test          # Run all tests
+npm run test:watch # Interactive watch mode
 ```
 
-To run tests in watch mode during development:
-```bash
-npm run test:watch
-```
-
-The current test suite covers:
-- **Rendering**: Ensures pages and components load correctly.
-- **Search Functionality**: Verifies that filtering by search query works as expected.
-- **CRUD Operations**: Tests the ability to add new orders via dialogs.
-- **Filtering & Sorting**: Validates that status filters and date sorting logic are accurate.
+### Scope
+- **Integration**: Full page workflows including adding orders via dialogs.
+- **Interactions**: Real-time search, status filtering, and multi-state sorting.
+- **Reliability**: Component rendering and state management integrity.
