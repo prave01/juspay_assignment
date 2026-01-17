@@ -92,7 +92,7 @@ export function OrderTable({
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence>
                         {paginatedData.map((order, index) => (
                             <motion.tr
                                 key={order.id}

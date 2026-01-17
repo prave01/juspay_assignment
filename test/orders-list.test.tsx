@@ -42,8 +42,8 @@ describe('OrdersList Page', () => {
 
         await userEvent.type(searchInput, 'John')
 
-        expect(screen.getByText('John Doe')).toBeInTheDocument()
         await waitFor(() => {
+            expect(screen.getByText('John Doe')).toBeInTheDocument()
             expect(screen.queryByText('Jane Smith')).not.toBeInTheDocument()
         })
     })
@@ -73,7 +73,9 @@ describe('OrdersList Page', () => {
 
         await userEvent.click(submitButton)
 
-        expect(screen.getByText('New User')).toBeInTheDocument()
+        await waitFor(() => {
+            expect(screen.getByText('New User')).toBeInTheDocument()
+        })
     })
 
     it('filters orders by status', async () => {
@@ -84,8 +86,8 @@ describe('OrdersList Page', () => {
         const pendingOption = screen.getByRole('menuitemcheckbox', { name: 'Pending' })
         await userEvent.click(pendingOption)
 
-        expect(screen.getByText('Jane Smith')).toBeInTheDocument()
         await waitFor(() => {
+            expect(screen.getByText('Jane Smith')).toBeInTheDocument()
             expect(screen.queryByText('John Doe')).not.toBeInTheDocument()
         })
     })
@@ -99,17 +101,21 @@ describe('OrdersList Page', () => {
         const oldestOption = screen.getByRole('menuitemcheckbox', { name: /oldest first/i })
         await userEvent.click(oldestOption)
 
-        let rows = screen.getAllByRole('row')
-        expect(rows[1]).toHaveTextContent('John Doe')
-        expect(rows[2]).toHaveTextContent('Jane Smith')
+        await waitFor(() => {
+            const rows = screen.getAllByRole('row')
+            expect(rows[1]).toHaveTextContent('John Doe')
+            expect(rows[2]).toHaveTextContent('Jane Smith')
+        })
 
         // Open dropdown and select Newest First
         await userEvent.click(sortButton)
         const newestOption = screen.getByRole('menuitemcheckbox', { name: /newest first/i })
         await userEvent.click(newestOption)
 
-        rows = screen.getAllByRole('row')
-        expect(rows[1]).toHaveTextContent('Jane Smith')
-        expect(rows[2]).toHaveTextContent('John Doe')
+        await waitFor(() => {
+            const rows = screen.getAllByRole('row')
+            expect(rows[1]).toHaveTextContent('Jane Smith')
+            expect(rows[2]).toHaveTextContent('John Doe')
+        })
     })
 })
